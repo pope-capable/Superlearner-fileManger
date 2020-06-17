@@ -1,8 +1,8 @@
 import { errorMessage } from 'iyasunday';
 import * as service from './service';
 const user = {
-  id : 1,
-  name : "Balogun Tolu"
+  id: 1,
+  name: 'Balogun Tolu',
 };
 
 export async function create(req, res) {
@@ -14,7 +14,6 @@ export async function create(req, res) {
   }
 }
 
-
 export async function update(req, res) {
   try {
     req.user = user;
@@ -23,8 +22,6 @@ export async function update(req, res) {
     res.status(err.httpStatusCode || 500).json(errorMessage(err));
   }
 }
-
-
 
 export async function view(req, res) {
   try {
@@ -45,7 +42,7 @@ export async function remove(req, res) {
 export async function list(req, res) {
   try {
     req.user = user;
-    res.status(200).json(await service.list(req.params,req.query));
+    res.status(200).json(await service.list(req.params, req.query));
   } catch (err) {
     res.status(err.httpStatusCode || 500).json(errorMessage(err));
   }

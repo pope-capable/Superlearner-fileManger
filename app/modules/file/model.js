@@ -7,32 +7,32 @@ const TABLE = 'files',
   schema = {
     name: {
       type: DataTypes.STRING(),
-      allowNull: false
+      allowNull: false,
     },
 
     description: {
       type: DataTypes.STRING(),
-      allowNull: true
+      allowNull: true,
     },
 
     slug: {
       type: DataTypes.STRING(),
-      allowNull: false
+      allowNull: false,
     },
 
     file: {
       type: DataTypes.STRING(),
       allowNull: false,
       get() {
-        return process.env.FILE_URL+'/'+this.getDataValue('file')
+        return process.env.FILE_URL + '/' + this.getDataValue('file');
       },
-    }
+    },
   };
 
 const File = db.define(TABLE, schema);
 File.table = TABLE;
 
-Folder.hasMany(File,{onDelete : 'cascade'});
-File.belongsTo(Folder,{onDelete : 'cascade'})
+Folder.hasMany(File, { onDelete: 'cascade' });
+File.belongsTo(Folder, { onDelete: 'cascade' });
 
 export default File;
