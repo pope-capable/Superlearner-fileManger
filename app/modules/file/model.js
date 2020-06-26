@@ -28,7 +28,7 @@ const TABLE = 'files',
       },
     },
   };
-
+ 
 const File = db.define(TABLE, schema);
 File.table = TABLE;
 
