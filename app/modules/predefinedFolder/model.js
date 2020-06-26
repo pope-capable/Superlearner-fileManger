@@ -3,7 +3,7 @@ import db from '../../utils/db';
 
 const schema = {
   id: {
-    type: DataTypes.TINYINT().UNSIGNED,
+    type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false,
