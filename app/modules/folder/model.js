@@ -6,7 +6,7 @@ import PredefinedFolder from '../predefinedFolder/model';
 
 const TABLE = 'folders',
   schema = {
-    userId: {
+    projectId: {
       type: DataTypes.INTEGER(),
       allowNull: false,
       validate: {
